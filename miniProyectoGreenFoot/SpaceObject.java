@@ -14,6 +14,11 @@ public class SpaceObject extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        World w = getWorld();
+        move (-5);
+        if (isAtEdge())
+        {
+            setLocation(590, getY());
+        }
     }
 }
