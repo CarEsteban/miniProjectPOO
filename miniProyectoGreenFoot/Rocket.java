@@ -36,7 +36,7 @@ public class Rocket extends Actor
         if(Greenfoot.isKeyDown("space"))
         {
             w.addObject(new shots(), getX()+50, getY());
-            //Greenfoot.playSound("destruir.wav");//agregar sonido
+            Greenfoot.playSound("shootLaserLow.mp3");//agregar sonido
         }
     }
 }

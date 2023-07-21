@@ -8,20 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    //creación musica background loop
+    GreenfootSound myMusic = new GreenfootSound("backLoop.mp3");
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Crea un munedo de 600x400 celdas con celdas ded 1x1 pixeles.
         super(600, 400, 1); 
         prepare();
     }   
     public void act()
     {
         addSpaceObject();
+        myMusic.playLoop();
     }
     public void addSpaceObject()
     {
