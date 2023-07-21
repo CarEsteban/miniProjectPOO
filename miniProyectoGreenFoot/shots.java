@@ -14,6 +14,14 @@ public class shots extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        World w= getWorld();
+        move(5);// Add your action code here.
+        if (isAtEdge())
+        {
+            w.removeObject(this);
+        }
+        else
+            if (isTouching(SpaceObject.class))
+            removeTouching(SpaceObject.class);
     }
 }
