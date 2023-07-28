@@ -27,6 +27,7 @@ public class MyWorld extends World
     }   
     public void act()
     {
+        addExtraLife();
         addSpaceObject();
         myMusic.playLoop();
     }
@@ -44,6 +45,20 @@ public class MyWorld extends World
             }
         }
     }
+    public void addExtraLife()
+    {
+        
+        if (Greenfoot.getRandomNumber(1000)<10)
+        {
+            
+            int randomNumber = Greenfoot.getRandomNumber(dimensionX);
+            
+            if (randomNumber>700)
+            {
+                addObject(new extraLife(),dimensionX,Greenfoot.getRandomNumber(dimensionY));
+            }
+        }
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -51,8 +66,11 @@ public class MyWorld extends World
     private void prepare()
     {
         Rocket rocket = new Rocket();
+        //extraLife heart = new extraLife();
         
         addObject(rocket,55,(dimensionY/2));
+        //addObject(heart,1200,(dimensionY/2));
+
         
         
         for (int i = 0; i<50 ;i++)
