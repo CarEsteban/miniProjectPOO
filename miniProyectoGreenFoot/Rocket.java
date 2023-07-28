@@ -15,7 +15,7 @@ public class Rocket extends Actor
     World w;
     
     private long lastShotTime; // Variable para registrar el tiempo del último disparo
-    private static final long SHOT_DELAY = 1000; // Tiempo de espera entre disparos en milisegundos (0.5 segundos en este ejemplo)
+    private static final long SHOT_DELAY = 1000; // Tiempo de espera entre disparos en milisegundos
 
     public void act()
     {

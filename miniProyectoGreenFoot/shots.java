@@ -15,7 +15,7 @@ public class shots extends Actor
     public void act()
     {
         World w= getWorld();
-        move(5);// Add your action code here.
+        move(4);
         if (isAtEdge())
         {
             w.removeObject(this);
@@ -23,5 +23,6 @@ public class shots extends Actor
         else
             if (isTouching(SpaceObject.class))
             removeTouching(SpaceObject.class);
+            //contador++
     }
 }
