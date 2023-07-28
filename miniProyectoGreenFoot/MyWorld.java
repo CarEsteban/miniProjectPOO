@@ -11,15 +11,19 @@ public class MyWorld extends World
     //creación musica background loop
     GreenfootSound myMusic = new GreenfootSound("backLoop.mp3");
     
+    private static int dimensionX =  1000;    
+    private static int dimensionY =  600;
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     public MyWorld()
     {    
-        // Crea un mundo de 600x400 celdas con celdas ded 1x1 pixeles.
-        super(600, 400, 1); 
-        prepare(); //prepara el mundo
+        super(dimensionX, dimensionY, 1); 
+        prepare(); //prepara el mundo   
+        GreenfootImage backgroundImage = new GreenfootImage("space.jpg");
+        backgroundImage.scale(getWidth(), getHeight());
+        setBackground(backgroundImage);
     }   
     public void act()
     {
@@ -29,14 +33,14 @@ public class MyWorld extends World
     public void addSpaceObject()
     {
         
-        if (Greenfoot.getRandomNumber(5)<1)
+        if (Greenfoot.getRandomNumber(15)<10)
         {
             
-            int randomNumber = Greenfoot.getRandomNumber(1000);
+            int randomNumber = Greenfoot.getRandomNumber(dimensionX);
             
-            if (randomNumber>400)
+            if (randomNumber>700)
             {
-                addObject(new SpaceObject(),randomNumber,Greenfoot.getRandomNumber(400));
+                addObject(new SpaceObject(),dimensionX,Greenfoot.getRandomNumber(dimensionY));
             }
         }
     }
@@ -47,15 +51,16 @@ public class MyWorld extends World
     private void prepare()
     {
         Rocket rocket = new Rocket();
-        addObject(rocket,55,201);
+        
+        addObject(rocket,55,(dimensionY/2));
         
         
-        for (int i = 0; i<25 ;i++)
+        for (int i = 0; i<50 ;i++)
         {
-            int randomNumber = Greenfoot.getRandomNumber(1000);
-            if (randomNumber>400)
+            int randomNumber = Greenfoot.getRandomNumber(dimensionX);
+            if (randomNumber>700)
             {
-                addObject(new SpaceObject(),randomNumber,Greenfoot.getRandomNumber(400));
+                addObject(new SpaceObject(),randomNumber+100,Greenfoot.getRandomNumber(dimensionY));
             }
         }
         

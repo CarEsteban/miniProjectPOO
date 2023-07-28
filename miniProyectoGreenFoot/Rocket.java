@@ -15,8 +15,13 @@ public class Rocket extends Actor
     World w;
     
     private long lastShotTime; // Variable para registrar el tiempo del último disparo
-    private static final long SHOT_DELAY = 1000; // Tiempo de espera entre disparos en milisegundos
-
+    private static final long SHOT_DELAY = 500; // Tiempo de espera entre disparos en milisegundos
+    public Rocket()
+    {
+        GreenfootImage rocketImage = new GreenfootImage("nave.png");
+        rocketImage.scale(90, 90); 
+        setImage(rocketImage);
+    }
     public void act()
     {
         w= getWorld();

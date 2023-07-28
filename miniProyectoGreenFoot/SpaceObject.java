@@ -13,13 +13,19 @@ public class SpaceObject extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    public SpaceObject()
+    {
+        GreenfootImage rocketImage = new GreenfootImage("alien.png");
+        rocketImage.scale(80, 60); 
+        setImage(rocketImage);
+    }
     public void act()
     {
         World w = getWorld();
         move (-5);
         if (isAtEdge())
         {
-            setLocation(590, getY());
+            setLocation(1190, getY());
         }
         else{
             if (isTouching(Rocket.class))
