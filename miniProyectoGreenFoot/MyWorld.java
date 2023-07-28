@@ -29,7 +29,7 @@ public class MyWorld extends World
     public void addSpaceObject()
     {
         
-        if (Greenfoot.getRandomNumber(3)<1)
+        if (Greenfoot.getRandomNumber(5)<1)
         {
             
             int randomNumber = Greenfoot.getRandomNumber(1000);
