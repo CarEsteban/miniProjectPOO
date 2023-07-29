@@ -23,6 +23,7 @@ public class Quit extends Actor
         {
             Greenfoot.delay(5);
             Greenfoot.setWorld(new Inicio());
+            
         }
     }
 }

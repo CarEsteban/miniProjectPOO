@@ -15,6 +15,7 @@ public class MyWorld extends World
     static Tablero vidas=new Tablero ("Vidas");
     private static int dimensionX =  1000;    
     private static int dimensionY =  600;
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -27,7 +28,6 @@ public class MyWorld extends World
         backgroundImage.scale(getWidth(), getHeight());
         setBackground(backgroundImage);
         objLifes=new lifes();
-        
     }   
     public void act()
     {

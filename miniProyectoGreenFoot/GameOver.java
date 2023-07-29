@@ -28,4 +28,5 @@ public class GameOver extends World
         addObject(game,300,500);
         showText("Tu puntaje fue: "+MyWorld.puntos.getValue()+" puntos",500,550);
     }
+
 }
