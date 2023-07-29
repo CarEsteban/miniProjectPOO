@@ -60,37 +60,26 @@ public class Rocket extends Actor
             Greenfoot.playSound("shootLaserLow.mp3");
             lastShotTime = currentTime; // Actualiza el tiempo del último disparo
         }
-        if (isTouching(SpaceObject.class)){
-            removeTouching(SpaceObject.class);
-            MyWorld.puntos.add(10);
-            
-        }
     }
-    public void Disminuir()
-    {
-        int c=3;
-        if (isAtEdge())
-        {
-            setLocation(1190, getY());
-        } else
-        {
-            if(isTouching(Rocket.class))
-            {
-            c--;
-            if (c==0)
-            {
-                Greenfoot.stop();
-            }      
-            }
-        }
-    }
+
     private void tocar()
     {
         if(isTouching(SpaceObject.class))
         {
-           removeTouching(SpaceObject.class);
-           MyWorld.vidas.add(-1);
-           
+            removeTouching(SpaceObject.class);
+            MyWorld.vidas.add(-1);
+        }
+        if(isTouching(SpaceObject.class))
+        {
+            removeTouching(SpaceObject.class);
+            Greenfoot.setWorld(new GameOver());
+        }
+        if(isTouching(extraLife.class))
+        {
+            removeTouching(extraLife.class);
+            MyWorld.vidas.add(1);
+            
         }
     }
 }
+

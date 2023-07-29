@@ -26,5 +26,6 @@ public class GameOver extends World
         addObject(Quit,700,500);
         NewGame game= new NewGame();
         addObject(game,300,500);
+        showText("Tu puntaje fue: "+MyWorld.puntos.getValue()+" puntos",500,550);
     }
 }

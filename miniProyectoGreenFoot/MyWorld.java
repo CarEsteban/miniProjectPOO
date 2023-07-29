@@ -43,7 +43,7 @@ public class MyWorld extends World
             
             int randomNumber = Greenfoot.getRandomNumber(dimensionX);
             
-            if (randomNumber>700)
+            if (randomNumber<200)
             {
                 addObject(new SpaceObject(),dimensionX,Greenfoot.getRandomNumber(dimensionY));
             }

@@ -28,13 +28,7 @@ public class SpaceObject extends Actor
         if (isAtEdge())
         {
             setLocation(1190, getY());
-        } else
-        {
-            if(isTouching(Rocket.class))
-            {
-            removeTouching(SpaceObject.class);
-            MyWorld.puntos.add(10);   
-            }
+        
         }
 
     }
