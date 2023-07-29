@@ -13,7 +13,7 @@ public class Rocket extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     World w;
-    
+    int c=3;
     private long lastShotTime; // Variable para registrar el tiempo del último disparo
     private static final long SHOT_DELAY = 500; // Tiempo de espera entre disparos en milisegundos
     public Rocket()
@@ -27,6 +27,8 @@ public class Rocket extends Actor
         w= getWorld();
         mover();
         shooter();
+        tocar();
+        
     }
     public void mover ()
     {
@@ -57,6 +59,38 @@ public class Rocket extends Actor
             w.addObject(new shots(), getX() + 50, getY());
             Greenfoot.playSound("shootLaserLow.mp3");
             lastShotTime = currentTime; // Actualiza el tiempo del último disparo
+        }
+        if (isTouching(SpaceObject.class)){
+            removeTouching(SpaceObject.class);
+            MyWorld.puntos.add(10);
+            
+        }
+    }
+    public void Disminuir()
+    {
+        int c=3;
+        if (isAtEdge())
+        {
+            setLocation(1190, getY());
+        } else
+        {
+            if(isTouching(Rocket.class))
+            {
+            c--;
+            if (c==0)
+            {
+                Greenfoot.stop();
+            }      
+            }
+        }
+    }
+    private void tocar()
+    {
+        if(isTouching(SpaceObject.class))
+        {
+           removeTouching(SpaceObject.class);
+           MyWorld.vidas.add(-1);
+           
         }
     }
 }

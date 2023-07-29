@@ -18,19 +18,24 @@ public class SpaceObject extends Actor
         GreenfootImage rocketImage = new GreenfootImage("alien.png");
         rocketImage.scale(80, 60); 
         setImage(rocketImage);
+       
     }
     public void act()
     {
         World w = getWorld();
         move (-5);
+        int c=3;
         if (isAtEdge())
         {
             setLocation(1190, getY());
+        } else
+        {
+            if(isTouching(Rocket.class))
+            {
+            removeTouching(SpaceObject.class);
+            MyWorld.puntos.add(10);   
+            }
         }
-        else{
-            if (isTouching(Rocket.class))
-            Greenfoot.stop();
-            //game over
-        }
+
     }
 }

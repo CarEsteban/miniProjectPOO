@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameOver here.
+ * Write a description of class Inicio here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameOver extends World
+public class Inicio extends World
 {
     private static int dimensionX =  1000;    
     private static int dimensionY =  600;
     /**
-     * Constructor for objects of class GameOver.
+     * Constructor for objects of class Inicio.
      * 
      */
-    public GameOver()
+    public Inicio()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(dimensionX, dimensionY, 1); 
@@ -22,9 +22,7 @@ public class GameOver extends World
     }
     public void prepare()
     {
-        Quit Quit= new Quit();
-        addObject(Quit,700,500);
         NewGame game= new NewGame();
-        addObject(game,300,500);
+        addObject(game,500,500);
     }
 }

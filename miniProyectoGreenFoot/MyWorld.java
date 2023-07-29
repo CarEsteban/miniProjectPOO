@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -11,8 +11,8 @@ public class MyWorld extends World
     //creación musica background loop
     GreenfootSound myMusic = new GreenfootSound("backLoop.mp3");
     public lifes objLifes;
-    Tablero puntos;
-    Tablero vidas;
+    static Tablero puntos=new Tablero("Puntaje");
+    static Tablero vidas=new Tablero ("Vidas");
     private static int dimensionX =  1000;    
     private static int dimensionY =  600;
     /**
@@ -26,10 +26,8 @@ public class MyWorld extends World
         GreenfootImage backgroundImage = new GreenfootImage("space.jpg");
         backgroundImage.scale(getWidth(), getHeight());
         setBackground(backgroundImage);
-        puntos=new Tablero (0,"Puntaje:");
-        vidas=new Tablero (3,"Vidas:");
-        addObject(puntos,150,85);
-        addObject(vidas,300,85);
+        objLifes=new lifes();
+        
     }   
     public void act()
     {
@@ -77,7 +75,11 @@ public class MyWorld extends World
         addObject(rocket,55,(dimensionY/2));
         //addObject(heart,1200,(dimensionY/2));
 
-        
+        addObject(puntos,80,45);
+        puntos.setValue(0);
+        addObject(vidas,200,45);
+        vidas.setValue(3);
+    
         
         for (int i = 0; i<50 ;i++)
         {

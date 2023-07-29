@@ -12,8 +12,17 @@ public class lifes extends Actor
      * Act - do whatever the lifes wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act()
+    int c=3;
+    public lifes()
     {
-        // Add your action code here.
+        
+    }
+    public void Disminuir()
+    {
+        c--;
+        if (c==0)
+        {
+            Greenfoot.stop();
+        }
     }
 }
