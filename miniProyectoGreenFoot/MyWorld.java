@@ -78,7 +78,7 @@ public class MyWorld extends World
         addObject(puntos,80,45);
         puntos.setValue(0);
         addObject(vidas,200,45);
-        vidas.setValue(3);
+        vidas.setValue(1);
     
         
         for (int i = 0; i<50 ;i++)
