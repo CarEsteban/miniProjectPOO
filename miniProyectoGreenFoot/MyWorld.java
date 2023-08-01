@@ -10,7 +10,6 @@ public class MyWorld extends World
 {
     //creación musica background loop
     GreenfootSound myMusic = new GreenfootSound("backLoop.mp3");
-    public lifes objLifes;
     static Tablero puntos=new Tablero("Puntaje");
     static Tablero vidas=new Tablero ("Vidas");
     private static int dimensionX =  1000;    
@@ -28,7 +27,6 @@ public class MyWorld extends World
         GreenfootImage backgroundImage = new GreenfootImage("space.jpg");
         backgroundImage.scale(getWidth(), getHeight());
         setBackground(backgroundImage);
-        objLifes=new lifes();
     }   
     public void act()
     {
