@@ -27,10 +27,5 @@ public class extraLife extends Actor
         {
             getWorld().removeObject(this);
         }
-        else{
-            if (isTouching(Rocket.class))
-            getWorld().removeObject(this);
-            //subir vidas
-        }
     }
 }

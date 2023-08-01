@@ -24,7 +24,7 @@ public class Rocket extends Actor
     }
     public void act()
     {
-        w= getWorld();
+        w = getWorld();
         mover();
         shooter();
         tocar();
@@ -68,12 +68,17 @@ public class Rocket extends Actor
         {
             removeTouching(SpaceObject.class);
             MyWorld.vidas.add(-1);
+            // Verificar si quedan vidas
+            if (MyWorld.vidas.getValue() <= 0)
+            {
+                Greenfoot.setWorld(new GameOver());
+                MyWorld myWorld = (MyWorld) w;
+                myWorld.gameOver();
+            }
         }
-        if(isTouching(SpaceObject.class))
-        {
-            removeTouching(SpaceObject.class);
-            Greenfoot.setWorld(new GameOver());
-        }
+        
+        
+        
         if(isTouching(extraLife.class))
         {
             removeTouching(extraLife.class);

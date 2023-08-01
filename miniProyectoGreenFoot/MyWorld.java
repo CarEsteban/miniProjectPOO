@@ -15,6 +15,7 @@ public class MyWorld extends World
     static Tablero vidas=new Tablero ("Vidas");
     private static int dimensionX =  1000;    
     private static int dimensionY =  600;
+    private boolean isGameOver = false;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -31,10 +32,19 @@ public class MyWorld extends World
     }   
     public void act()
     {
-        addExtraLife();
-        addSpaceObject();
-        myMusic.playLoop();
+        if(!isGameOver){
+            addExtraLife();
+            addSpaceObject();
+            myMusic.playLoop();
+        }
     }
+    
+    public void gameOver()
+    {
+        isGameOver = true; 
+        myMusic.stop(); 
+    }
+    
     public void addSpaceObject()
     {
         
@@ -75,10 +85,12 @@ public class MyWorld extends World
         addObject(rocket,55,(dimensionY/2));
         //addObject(heart,1200,(dimensionY/2));
 
+        //addObject(new extraLife(),1000,(dimensionY/2));
+        
         addObject(puntos,80,45);
         puntos.setValue(0);
         addObject(vidas,200,45);
-        vidas.setValue(1);
+        vidas.setValue(3);
     
         
         for (int i = 0; i<50 ;i++)
