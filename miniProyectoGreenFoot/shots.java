@@ -24,8 +24,7 @@ public class shots extends Actor
         {   if (isTouching(SpaceObject.class))
             {
             removeTouching(SpaceObject.class);
-            MyWorld.puntos.add(10);
-            //contador++
+            MyWorld.puntos.add(5);
             }
         }
     }

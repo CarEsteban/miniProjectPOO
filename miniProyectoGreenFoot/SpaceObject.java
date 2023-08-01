@@ -24,7 +24,6 @@ public class SpaceObject extends Actor
     {
         World w = getWorld();
         move (-5);
-        int c=3;
         if (isAtEdge())
         {
             setLocation(1190, getY());

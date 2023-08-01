@@ -78,12 +78,8 @@ public class MyWorld extends World
     private void prepare()
     {
         Rocket rocket = new Rocket();
-        //extraLife heart = new extraLife();
         
         addObject(rocket,55,(dimensionY/2));
-        //addObject(heart,1200,(dimensionY/2));
-
-        //addObject(new extraLife(),1000,(dimensionY/2));
         
         addObject(puntos,80,45);
         puntos.setValue(0);
